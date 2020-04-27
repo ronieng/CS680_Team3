@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">Bentley Bath Bombs</string>
+
+    <!-- ACTION BAR MENU -->
+    <string name ="home">Home</string>
+    <string name ="products">Products</string>
+    <string name ="dye">Dye Instructions</string>
+    <string name ="cart">Cart</string>  <!--also used for Cart Activity Title -->
+    <string name ="contact">Contact</string>
+
+    <!-- HOME ACTIVITY -->
+    <string name = "welcome">Welcome to Bentley Bath Bombs</string>
+    <string name = "about">Unique and custom bath bombs, bath salts, scrubs, lip balms and soaps! </string>
+    <string name = "pamper">Pamper yourself today! Make bath time fun!</string>
+
+    <!-- PRODUCTS ACTIVITY -->
+
+
+    <!-- CART ACTIVITY -->
+    <string name = "item_name"> Item Name</string>
+    <string name = "price"> Price</string>
+    <string name = "qty">Qty</string>
+    <string name = "subtotal">Subtotal</string>
+    <string name = "tax">Tax</string>
+    <string name = "shipping">Shipping</string>
+    <string name = "total">Total</string>
+    <string name = "calculate">Calculate Total</string>
+    <string name = "checkout">Check Out</string>
+
+
+    <!-- CHECKOUT ACTIVITY -->
+    <string name = "contact_info">Contact Information </string>
+    <string name = "name">Name</string>
+    <string name = "addr1">Address Line1</string>
+    <string name = "addr2">Address Line2</string>
+    <string name = "city">City</string>
+    <string name = "state">State</string>
+    <string name = "zip">Zip Code</string>
+    <string name = "email">Email Address</string>
+    <string name = "phone">Phone Number</string>
+    <string name = "process">Process Order</string>
+    <string name = "payment">Payment Information</string>
+    <string name = "cc_name">Name on Card</string>
+    <string name = "cc_number">Credit Card Number</string>
+    <string name = "cvc_code">CVC Code</string>
+    <string name = "exp_date">Expiration Date</string>
+
+    <!-- CONTACT ACTIVITY -->
+    <string name = "contact_us">Contact Us</string>
+    <string name = "company">Bentley Bath Bombs</string>
+    <string name = "address">175 Forest Street</string>
+    <string name = "address2">LaCava Building</string>
+    <string name = "citystatezip">Waltham, MA 02453 </string>
+    <string name = "call_us">781-891-2000</string>
+    <string name = "email_us">reng@bentley.edu </string>
+    <string name = "map">Map</string>
+    <string name = "text">Text Us</string>
+    <string name="title_activity_maps">Map</string>
+
+
+    <!--DYE INSTRUCTIONS -->
+    <string name = "speak">Read Aloud</string>
+    <string name="dye_instructions_html">
+    <![CDATA[
+    <b> Krazy Colour Instructions </b>
+    <p> Krazy Colour Water Soluble Dyes can be used in bath bombs, soaps, candles and more! </p>
+    <p> The most important thing to do is to ensure that the dye is dissolved properly! </p>
+    <p> </p>
+    <b> Make a solution: </b>
+    <ul>
+    <li> Weigh out the required quantity of dye. </li>
+    <li> Make a paste using cold water.</li>
+    <li> Add hot water to this paste while stirring.</li>
+    <li> Continue to stir until the dye is completely dissolved.</li>
+    <li> Allow to cool. </li>
+    <li> The dye is now ready to use. </li>
+    <li> The stability of solutions are good provided they are kept in a cool place and not exposed to direct sunlight.</li>
+    </ul>
+
+    <b> The points to take note are: </b>
+    <ul>
+    <li> Dyes have varying solubility. </li>
+    <li> Adding cold water and making a paste ensures that water can easily get to the surface of the dyes.  This is especially important when using powders. </li>
+    <li> The hot water adds energy into the dissolving process forcing the dye to dissolve quicker.  The temperature of the water has no effect on the dye.  They were all originally designed for dyeing textiles at 95°C.</li>
+    <li> The stirring ensures that there is good contact between the dye and the water and accelerates the dissolving step. </li>
+    <li> This can be done by adding cold water. </li>
+    <li> Make sure to handle the dye solution carefully as dyes can be messy! </li>
+    <li> If you are going to store the solutions  and use the dyes in food then you may consider adding a preservative. </li>
+    </ul>
+
+    ]]>
+    </string>
+
+</resources>

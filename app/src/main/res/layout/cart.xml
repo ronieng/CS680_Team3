@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cartTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/cart"
+        android:textColor="#BD09C6"
+        android:textSize="20sp"
+        android:textStyle="bold" >
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:textColor="@color/teal"/>
+
+        <TextView
+            android:text="@string/price"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/teal"/>
+
+        <TextView
+            android:text="@string/qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/teal"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#DFDCDC"
+        android:clickable="true"
+        android:drawSelectorOnTop="true"
+        android:padding="5px"
+        android:scrollIndicators="right"
+        android:scrollbars="vertical"></ListView>
+
+    <!-- Calculate Button - Calculates Total Amount -->
+    <Button
+        android:id = "@+id/calculateBtn"
+        android:onClick="onClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text = "@string/calculate">
+    </Button>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="5">
+        <TableRow>
+            <TextView
+                style = "@style/labels"
+                android:id="@+id/labelSubtotal"
+                android:text= "@string/subtotal">
+            </TextView>
+
+            <TextView
+                style = "@style/cart_amounts"
+                android:id="@+id/subtotal">
+            </TextView>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style = "@style/labels"
+                android:id="@+id/labelTax"
+                android:text= "@string/tax">
+            </TextView>
+
+            <TextView
+                style = "@style/cart_amounts"
+                android:id="@+id/tax">
+            </TextView>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style = "@style/labels"
+                android:id="@+id/labelShipping"
+                android:text= "@string/shipping">
+            </TextView>
+
+            <TextView
+                android:id="@+id/shipping"
+                style="@style/cart_amounts">
+
+            </TextView>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style = "@style/labels"
+                android:id="@+id/labelTotal"
+                android:text= "@string/total">
+            </TextView>
+
+            <TextView
+                style = "@style/cart_amounts"
+                android:id="@+id/total">
+            </TextView>
+        </TableRow>
+
+    </TableLayout>
+
+
+    <!-- Checkout Button - opens Checkout Page -->
+    <Button
+        android:id = "@+id/chkoutBtn"
+        android:onClick="onClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text = "@string/checkout">
+
+    </Button>
+
+
+</LinearLayout>

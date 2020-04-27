@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id = "@+id/contact"
+        style = "@style/InfoForm"
+        android:text = "@string/contact_info">
+    </TextView>
+
+    <EditText
+        android:id="@+id/name"
+        style="@style/InfoForm"
+        android:hint="@string/name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/addLine1"
+        style="@style/InfoForm"
+        android:hint="@string/addr1"
+        android:inputType="textPostalAddress" />
+
+    <EditText
+        android:id ="@+id/addLine2"
+        style="@style/InfoForm"
+        android:hint = "@string/addr2"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/city"
+            style="@style/InfoForm"
+            android:hint="@string/city"
+            android:inputType="text" />
+        <EditText
+            android:id ="@+id/state"
+            style="@style/InfoForm"
+            android:hint = "@string/state" />
+        <EditText
+            android:id ="@+id/zip"
+            style="@style/InfoForm"
+            android:hint = "@string/zip" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/phone"
+        style="@style/InfoForm"
+        android:hint= "@string/phone"
+        android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/InfoForm"
+            android:hint="@string/email"
+            android:inputType="textWebEmailAddress" />
+    </LinearLayout>
+
+    <TextView
+        android:id = "@+id/payment"
+        style = "@style/InfoForm"
+        android:text = "@string/payment"
+        android:layout_marginTop="50dp">
+    </TextView>
+
+    <EditText
+        android:id="@+id/cc_name"
+        style="@style/InfoForm"
+        android:hint="@string/cc_name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/cc_num"
+        style="@style/InfoForm"
+        android:hint="@string/cc_number"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/cvc_code"
+            style="@style/InfoForm"
+            android:hint="@string/cvc_code"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/exp_date"
+            style="@style/InfoForm"
+            android:hint="@string/exp_date"
+            android:inputType="date" />
+   </LinearLayout>
+
+    <Button
+        android:id="@+id/processOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/process">
+    </Button>
+</LinearLayout>
