@@ -37,7 +37,7 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
     private int cartitem;
     private static final String tag ="cart" ;
 
-    private double DEFAULT_SHIPPING = 5.0;
+    private double DEFAULT_SHIPPING = 5.00;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
