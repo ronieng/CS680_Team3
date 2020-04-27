@@ -15,7 +15,7 @@
 
     <TextView
         android:id = "@+id/price"
-        android:text="999.0"
+        android:text="999.00"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:textSize="24sp"
@@ -26,7 +26,6 @@
         android:text="99"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-
         android:textSize="24sp"
         android:textColor="@color/teal"/>
 </LinearLayout>

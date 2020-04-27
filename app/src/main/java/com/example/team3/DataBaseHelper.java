@@ -38,7 +38,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "icon integer," +
                 "name varchar(64)," +
                 "price double," +
-                "category varchar(64)," +
                 "description text" +
                 ")";
         db.execSQL(sql);
@@ -111,11 +110,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.insert("product", null, values);
     }
 
-    public void addProduce(String name, int icon, String category, double price, String description) {
+    public void addProduce(String name, int icon, double price, String description) {
         ContentValues values = new ContentValues();
         values.put("name", name);
         values.put("icon", icon);
-        values.put("category", category);
         values.put("price", price);
         values.put("description", description);
         getWritableDatabase().insert("product", null, values);
@@ -123,7 +121,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public ArrayList<Product> getAllProducts() {
         String[] cols = {
-                "id", "name", "icon", "category", "price", "description"
+                "id", "name", "icon", "price", "description"
         };
         Cursor c = getReadableDatabase().query("product", cols, null, null, null, null, null);
 
@@ -143,7 +141,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public Product getProductById(int id) {
         String[] cols = {
-                "id", "name", "icon", "category", "price", "description"
+                "id", "name", "icon", "price", "description"
         };
         String[] args = {
                 String.valueOf(id)
