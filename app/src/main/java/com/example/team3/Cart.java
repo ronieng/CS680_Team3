@@ -128,7 +128,6 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         switch (v.getId()) {
             case R.id.removeBtn:
                 cartItems.remove(cartitem);
-
                 cart.notifyDataSetChanged();
                 Log.i(tag, "Item(s) Removed");
                 Toast.makeText(getApplicationContext(), "Item(s) Removed From Cart", Toast.LENGTH_SHORT).show();
