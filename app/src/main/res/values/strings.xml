@@ -13,8 +13,6 @@
     <string name = "about">Unique and custom bath bombs, bath salts, scrubs, lip balms and soaps! </string>
     <string name = "pamper">Pamper yourself today! Make bath time fun!</string>
 
-    <!-- PRODUCTS ACTIVITY -->
-
 
     <!-- CART ACTIVITY -->
     <string name = "item_name"> Item Name</string>
@@ -24,6 +22,7 @@
     <string name = "tax">Tax</string>
     <string name = "shipping">Shipping</string>
     <string name = "total">Total</string>
+    <string name = "remove">Remove</string>
     <string name = "calculate">Calculate Total</string>
     <string name = "checkout">Check Out</string>
 

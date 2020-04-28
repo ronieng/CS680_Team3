@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -122,8 +123,10 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         switch (v.getId()) {
             case R.id.removeBtn:
                 cartItems.remove(cartitem);
+
                 cart.notifyDataSetChanged();
                 Log.i(tag, "Item Removed");
+                Toast.makeText(getApplicationContext(), "Item Removed From Cart", Toast.LENGTH_SHORT).show();
 
             case R.id.calculateBtn:
                 double dsubTotal = 0;
