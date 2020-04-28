@@ -2,7 +2,6 @@ package com.example.team3;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,7 +29,7 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
     private TextView shipping;
     private TextView total;
     private ListView list;
-    private Button calculateBtn, chkoutBtn;
+    private Button removeBtn, calculateBtn, chkoutBtn;
     private CustomAdapter cart;
     private ArrayList <CartItem> cartItems;
     private int cartitem;
@@ -49,6 +47,7 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         tax = (TextView) findViewById(R.id.tax);
         shipping = (TextView) findViewById(R.id.shipping);
         total = (TextView) findViewById(R.id.total);
+        removeBtn = (Button) findViewById (R.id.removeBtn);
         calculateBtn = (Button) findViewById(R.id.calculateBtn);
         chkoutBtn = (Button) findViewById(R.id.chkoutBtn);
 
@@ -109,11 +108,23 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         }
     }
 
+    //Called when item in cart is clicked and displays selected item in editText (insert) field
+    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+        CartItem text = cartItems.get(position);
+        //insert.setText(text);
+        Log.i(tag, "Item selected");
+        cartitem = position;
+    }
     //Checkout Button is clicked - opens Checkout Page
     @Override
     public void onClick(View v) {
         Log.i(tag, "onClick invoked.");
         switch (v.getId()) {
+            case R.id.removeBtn:
+                cartItems.remove(cartitem);
+                cart.notifyDataSetChanged();
+                Log.i(tag, "Item Removed");
+
             case R.id.calculateBtn:
                 double dsubTotal = 0;
                 for (CartItem item: cartItems) {
@@ -126,22 +137,18 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
                 tax.setText(dtax + "");
                 shipping.setText (dshipping + "");
                 total.setText((dsubTotal + dtax + dshipping) + "");
+                Log.i(tag, "Total Calculated");
                 break;
+
             case R.id.chkoutBtn:
                 Intent i2 = new Intent(this, Checkout.class);
                 startActivity(i2);
-                Log.i(tag, "onClick complete.");
+                Log.i(tag, "Checkout Button Clicked");
                 break;
         }
     }
 
-    //Called when item in cart is clicked and displays selected item in editText (insert) field
-    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-        CartItem text = cartItems.get(position);
-        //insert.setText(text);
-        Log.i(tag, "Item selected");
-        cartitem = position;
-    }
+
 
     //Insert Option Menu to Action Bar
     @Override
