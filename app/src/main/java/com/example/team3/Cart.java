@@ -61,6 +61,7 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         actionBar.setDisplayShowTitleEnabled(false);
 
         //Set Listener for button click
+        removeBtn.setOnClickListener(this);
         chkoutBtn.setOnClickListener (this);
         calculateBtn.setOnClickListener(this);
 
