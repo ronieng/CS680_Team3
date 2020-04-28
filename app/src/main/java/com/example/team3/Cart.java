@@ -104,7 +104,7 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
             TextView tvNum = convertView.findViewById(R.id.num);
             CartItem item = getItem(position);
             tvGoodsName.setText(item.getGoodsName());
-            tvPrice.setText(item.getPrice() + "");
+            tvPrice.setText(String.format("$%.2f", item.getPrice()) + "");
             tvNum.setText(item.getBuyNum() + "");
             return convertView;
         }
@@ -141,10 +141,10 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
                 double dtax = dsubTotal * 0.0625;
                 double dshipping = DEFAULT_SHIPPING;
 
-                subtotal.setText(String.format("%.2f", dsubTotal) + "");
-                tax.setText(String.format("%.2f", dtax) + "");
-                shipping.setText (String.format("%.2f", dshipping) + "");
-                total.setText((String.format("%.2f", dsubTotal + dtax + dshipping)) + "");
+                subtotal.setText(String.format("$%.2f", dsubTotal) + "");
+                tax.setText(String.format("$%.2f", dtax) + "");
+                shipping.setText (String.format("$%.2f", dshipping) + "");
+                total.setText((String.format("$%.2f", dsubTotal + dtax + dshipping)) + "");
                 Log.i(tag, "Total Calculated");
                 break;
 
