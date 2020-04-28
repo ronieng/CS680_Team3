@@ -117,17 +117,21 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         Log.i(tag, "Item selected");
         cartitem = position;
     }
-    //Checkout Button is clicked - opens Checkout Page
+
+
+    //Remove button removes item(s) from cart; Calculate button calculates the total in cart;
+    //Checkout button brings customer to checkout page to complete transaction
     @Override
     public void onClick(View v) {
+
         Log.i(tag, "onClick invoked.");
         switch (v.getId()) {
             case R.id.removeBtn:
                 cartItems.remove(cartitem);
 
                 cart.notifyDataSetChanged();
-                Log.i(tag, "Item Removed");
-                Toast.makeText(getApplicationContext(), "Item Removed From Cart", Toast.LENGTH_SHORT).show();
+                Log.i(tag, "Item(s) Removed");
+                Toast.makeText(getApplicationContext(), "Item(s) Removed From Cart", Toast.LENGTH_SHORT).show();
 
             case R.id.calculateBtn:
                 double dsubTotal = 0;
@@ -137,10 +141,10 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
                 double dtax = dsubTotal * 0.0625;
                 double dshipping = DEFAULT_SHIPPING;
 
-                subtotal.setText(dsubTotal + "");
-                tax.setText(dtax + "");
-                shipping.setText (dshipping + "");
-                total.setText((dsubTotal + dtax + dshipping) + "");
+                subtotal.setText(String.format("%.2f", dsubTotal) + "");
+                tax.setText(String.format("%.2f", dtax) + "");
+                shipping.setText (String.format("%.2f", dshipping) + "");
+                total.setText((String.format("%.2f", dsubTotal + dtax + dshipping)) + "");
                 Log.i(tag, "Total Calculated");
                 break;
 
@@ -151,7 +155,6 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
                 break;
         }
     }
-
 
 
     //Insert Option Menu to Action Bar
