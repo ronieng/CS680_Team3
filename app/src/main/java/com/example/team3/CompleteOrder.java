@@ -2,27 +2,24 @@ package com.example.team3;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class Checkout extends AppCompatActivity implements View.OnClickListener {
+public class CompleteOrder extends AppCompatActivity {
 
-    private Button processOrder;
+    private TextView thanks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.checkout);
+        setContentView(R.layout.completeorder);
 
-        processOrder = (Button) findViewById(R.id.processOrder);
-        processOrder.setOnClickListener(this);
+        thanks = (TextView) findViewById(R.id.thanks);
 
         //Setup Action Bar with Logo
         ActionBar actionBar = getSupportActionBar();
@@ -30,13 +27,7 @@ public class Checkout extends AppCompatActivity implements View.OnClickListener 
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
-    }
 
-    @Override
-    public void onClick(View v) {
-        Intent i1 = new Intent(this, CompleteOrder.class);
-        startActivity(i1);
-        Log.i("OrderComplete", "Process Order Clicked");
     }
 
     //Insert Option Menu to Action Bar
@@ -51,7 +42,7 @@ public class Checkout extends AppCompatActivity implements View.OnClickListener 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-                Intent i1 = new Intent(this, Home.class);
+                Intent i1 = new Intent(this, CompleteOrder.class);
                 startActivity(i1);
                 return true;
 
@@ -73,11 +64,6 @@ public class Checkout extends AppCompatActivity implements View.OnClickListener 
             case R.id.contact:
                 Intent i5 = new Intent(this, Contact.class);
                 startActivity(i5);
-                return true;
-
-            case R.id.processOrder:
-                Intent i6 = new Intent(this, Checkout.class);
-                startActivity(i6);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

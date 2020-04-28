@@ -16,7 +16,7 @@
 
     <!-- CART ACTIVITY -->
     <string name = "item_name"> Item Name</string>
-    <string name = "price"> Price</string>
+    <string name = "price"> Price/Unit </string>
     <string name = "qty">Qty</string>
     <string name = "subtotal">Subtotal</string>
     <string name = "tax">Tax</string>
@@ -89,5 +89,9 @@
 
     ]]>
     </string>
+
+    <!-- COMPLETE ORDER -->
+    <string name = "thanks">THANK YOU FOR YOUR ORDER!</string>
+
 
 </resources>

@@ -44,6 +44,9 @@
             android:label="Checkout" />
         <activity android:name=".Contact"
             android:label="Contact" />
+        <activity android:name=".CompleteOrder"
+            android:label="CompleteOrder" />
+
 
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
     </application>

@@ -174,6 +174,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         };
         Cursor c = getReadableDatabase().query("cart", cols, null, null, null, null, null);
 
+
         ArrayList<CartItem> cartItems = new ArrayList<>();
         while (c.moveToNext()) {
             CartItem cartItem = new CartItem();
