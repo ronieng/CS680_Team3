@@ -73,6 +73,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 ")";
         db.execSQL(sql);
 
+        addProduce(db, "Midnight Blue", R.drawable.midnight_blue, 5,"Price: $5");
+        addProduce(db,"Orange Dye", R.drawable.orange, 5, "Price: $5");
+        addProduce(db,"Teal Dye", R.drawable.teal, 5, "Price: $5");
         addProduce(db, "Rose", R.drawable.rose, 5,"Price: $5");
         addProduce(db,"Christmas Tree", R.drawable.christmas_tree, 5, "Price: $5");
         addProduce(db,"Football", R.drawable.football, 5, "Price: $5");
