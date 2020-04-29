@@ -146,7 +146,7 @@ public class Checkout extends AppCompatActivity implements View.OnClickListener 
             ArrayList<CartItem> list = DataBaseHelper.instance(getApplicationContext()).getCartList();
             DataBaseHelper.instance(getApplicationContext()).addOrderItems(id, list);
             DataBaseHelper.instance(getApplicationContext()).clearCart();
-            Toast.makeText(getBaseContext(), "place order success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "Order Complete", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, CompleteOrder.class);
             // i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);

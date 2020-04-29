@@ -121,7 +121,8 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
     public void clear() {
         cart.clear();
     }
-    //Remove button removes item(s) from cart; Calculate button calculates the total in cart;
+
+    //Clear Cart button removes all items from cart; Calculate button calculates the total in cart;
     //Checkout button brings customer to checkout page to complete transaction
     @Override
     public void onClick(View v) {
@@ -129,12 +130,11 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         Log.i(tag, "onClick invoked.");
         switch (v.getId()) {
             case R.id.clearBtn:
-                clear();//clears adpater
-
+                clear(); //clears adapter
                 DataBaseHelper.instance(getApplicationContext()).getWritableDatabase().delete("cart", null, null); //clears DB cart getcart items
                 cart.notifyDataSetChanged();
-                Log.i(tag, "Item(s) Cleared");
-                Toast.makeText(getApplicationContext(), "Item(s) Cleared From Cart", Toast.LENGTH_SHORT).show();
+                Log.i(tag, "Items Cleared");
+                Toast.makeText(getApplicationContext(), "Items Cleared From Cart", Toast.LENGTH_SHORT).show();
 
             case R.id.calculateBtn:
                 double dsubTotal = 0;
@@ -157,8 +157,8 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
                     startActivity(i2);
                     Log.i(tag, "Checkout Button Clicked");
                 } else {
-                    Log.i(tag, "Place an Order to Checkout");
-                    Toast.makeText(getApplicationContext(), "Place an Order to Checkout", Toast.LENGTH_SHORT).show();
+                    Log.e(tag, "User must add item before checkout");
+                    Toast.makeText(getApplicationContext(), "Add item(s) to cart before check out", Toast.LENGTH_SHORT).show();
                     break;
                 }
 
