@@ -30,10 +30,10 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
     private TextView shipping;
     private TextView total;
     private ListView list;
-    private Button removeBtn, calculateBtn, chkoutBtn;
+    private Button clearBtn, calculateBtn, chkoutBtn;
     private CustomAdapter cart;
     private ArrayList <CartItem> cartItems;
-    private int cartitem;
+    private int cartitem = -1;
     private static final String tag ="cart" ;
 
     private double DEFAULT_SHIPPING = 5.00;
@@ -48,7 +48,7 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         tax = (TextView) findViewById(R.id.tax);
         shipping = (TextView) findViewById(R.id.shipping);
         total = (TextView) findViewById(R.id.total);
-        removeBtn = (Button) findViewById (R.id.removeBtn);
+        clearBtn = (Button) findViewById (R.id.clearBtn);
         calculateBtn = (Button) findViewById(R.id.calculateBtn);
         chkoutBtn = (Button) findViewById(R.id.chkoutBtn);
 
@@ -61,7 +61,7 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         actionBar.setDisplayShowTitleEnabled(false);
 
         //Set Listener for button click
-        removeBtn.setOnClickListener(this);
+        clearBtn.setOnClickListener(this);
         chkoutBtn.setOnClickListener (this);
         calculateBtn.setOnClickListener(this);
 
@@ -115,10 +115,12 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         CartItem text = cartItems.get(position);
         //insert.setText(text);
         Log.i(tag, "Item selected");
-        cartitem = position;
+        this.cartitem = position;
     }
-
-
+    // clear cart list view adapter
+    public void clear() {
+        cart.clear();
+    }
     //Remove button removes item(s) from cart; Calculate button calculates the total in cart;
     //Checkout button brings customer to checkout page to complete transaction
     @Override
@@ -126,11 +128,12 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
 
         Log.i(tag, "onClick invoked.");
         switch (v.getId()) {
-            case R.id.removeBtn:
-                cartItems.remove(cartitem);
+            case R.id.clearBtn:
+                clear(); //clears adpater
+                DataBaseHelper.instance(getApplicationContext()).getWritableDatabase().delete("cart", null, null); //clears DB cart getcart items
                 cart.notifyDataSetChanged();
-                Log.i(tag, "Item(s) Removed");
-                Toast.makeText(getApplicationContext(), "Item(s) Removed From Cart", Toast.LENGTH_SHORT).show();
+                Log.i(tag, "Item(s) Cleared");
+                Toast.makeText(getApplicationContext(), "Item(s) Cleared From Cart", Toast.LENGTH_SHORT).show();
 
             case R.id.calculateBtn:
                 double dsubTotal = 0;

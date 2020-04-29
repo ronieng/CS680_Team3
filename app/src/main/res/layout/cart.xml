@@ -77,9 +77,9 @@
 
             <!-- Remove - Removes Item from Cart -->
             <Button
-                android:id = "@+id/removeBtn"
+                android:id = "@+id/clearBtn"
                 android:onClick="onClick"
-                android:text = "@string/remove">
+                android:text = "@string/clear">
             </Button>
 
             <!-- Calculate Button - Calculates Total Amount -->

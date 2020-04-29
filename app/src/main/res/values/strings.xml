@@ -22,7 +22,7 @@
     <string name = "tax">Tax</string>
     <string name = "shipping">Shipping</string>
     <string name = "total">Total</string>
-    <string name = "remove">Remove</string>
+    <string name = "clear">Clear</string>
     <string name = "calculate">Calculate Total</string>
     <string name = "checkout">Check Out</string>
 
