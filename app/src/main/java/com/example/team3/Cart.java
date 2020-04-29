@@ -129,7 +129,8 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
         Log.i(tag, "onClick invoked.");
         switch (v.getId()) {
             case R.id.clearBtn:
-                clear(); //clears adpater
+                clear();//clears adpater
+
                 DataBaseHelper.instance(getApplicationContext()).getWritableDatabase().delete("cart", null, null); //clears DB cart getcart items
                 cart.notifyDataSetChanged();
                 Log.i(tag, "Item(s) Cleared");
@@ -151,10 +152,16 @@ public class Cart extends AppCompatActivity implements View.OnClickListener, Ada
                 break;
 
             case R.id.chkoutBtn:
-                Intent i2 = new Intent(this, Checkout.class);
-                startActivity(i2);
-                Log.i(tag, "Checkout Button Clicked");
-                break;
+                if(!cartItems.isEmpty() ) {
+                    Intent i2 = new Intent(this, Checkout.class);
+                    startActivity(i2);
+                    Log.i(tag, "Checkout Button Clicked");
+                } else {
+                    Log.i(tag, "Place an Order to Checkout");
+                    Toast.makeText(getApplicationContext(), "Place an Order to Checkout", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+
         }
     }
 
