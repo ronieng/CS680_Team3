@@ -188,7 +188,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return cartItems;
     }
-
+    // method clears cartitems from the database
     public void clearCart() {
         getWritableDatabase().delete("cart", null, null);
     }

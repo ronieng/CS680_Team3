@@ -21,7 +21,7 @@ public class Product {
 
     public String getName() {
         return name;
-    }
+    } //Product name getters
 
     public String getDescription() {
         return description;
@@ -29,9 +29,9 @@ public class Product {
 
     public double getPrice() {
         return price;
-    }
+    } //Product price getters
 
     public int getIcon() {
         return icon;
-    }
+    } //product icon getters
 }
