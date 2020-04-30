@@ -50,7 +50,7 @@ public class ProductActivity extends AppCompatActivity {
 
         loadData();
     }
-
+    // Loads products from database into list
     private void loadData() {
         ArrayList<Product> list = DataBaseHelper.instance(getApplicationContext()).getAllProducts();
         this.lstProd.clear();
@@ -97,7 +97,7 @@ public class ProductActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
+    // defining the product activity recyclerview
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.myViewHolder> {
 
         private Context mContext;
