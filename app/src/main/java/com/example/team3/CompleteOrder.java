@@ -47,7 +47,7 @@ public class CompleteOrder extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-                Intent i1 = new Intent(this, CompleteOrder.class);
+                Intent i1 = new Intent(this, Home.class);
                 startActivity(i1);
                 return true;
 
